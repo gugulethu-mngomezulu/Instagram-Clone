@@ -1,38 +1,52 @@
 .App {
-  text-align: center;
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+display: flex;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.leftSideHome {
+  flex: 0.15; /* or your preferred width ratio */
+  padding: 25px 11px;
+  border-right: 1px solid #ddd;
+  height: 3000vh; /* Makes the sidebar stretch full viewport height */
+  box-sizing: border-box;
 }
+.middleSide{
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+  flex: 0.5;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* border-right: 1px solid #ddd;    */
 }
 
-.App-link {
-  color: #61dafb;
+.rightSide{
+  flex: 0.33;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (min-width:920px) and (max-width: 1140px) {
+  .rightSide {
+      display: none;
   }
-  to {
-    transform: rotate(360deg);
-  }
+   .leftSideHome{
+    flex: 0.2;
+   }
+   .middleSide{
+    flex: 0.5;
+   }
+
 }
+@media screen and (min-width:920px) and (max-width: 1140px) {
+  .rightSide{
+    display: none;
+  }
+  .leftSideHome{
+    display: none;
+  }
+  .middleSide{
+    display: none;
+  }
+
+}
+  
